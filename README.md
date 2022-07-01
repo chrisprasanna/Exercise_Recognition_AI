@@ -8,9 +8,7 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 
 ## Table of Contents
 - [Installation](##installation)
-- [Usage](##usage)
 - [Features](##features)
-- [Results](##results)
 - [To-Do](##to-do)
 - [Credits](##credits)
 - [License](##license)
