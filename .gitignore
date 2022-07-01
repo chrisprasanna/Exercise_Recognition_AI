@@ -1,0 +1,8 @@
+*.egg-info
+*.pyc
+data
+old
+logs
+.ipynb_checkpoints
+*.h5
+env
