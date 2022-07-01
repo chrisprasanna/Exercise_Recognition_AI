@@ -1,4 +1,4 @@
-# :robot::video_camera: Building an AI for Real-Time Exercise Recogntion using Computer Vision & Deep Learning :weight_lifting_man::muscle:
+# :robot::video_camera: Building an AI for Real-Time Exercise Recognition using Computer Vision & Deep Learning :weight_lifting_man::muscle:
 ---
 
 ## Description
@@ -25,17 +25,17 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
   
 7. Open Anaconda Navigator
 8. Under the "Applications On" dropdown menu, select the newly created conda environment
-9. Install and open Jupyter Notebook. NOTE: once you complete this step and if you're on a Windows device, you can call the insalled version of Jupyter Notebook within the conda environment directly from the start menu.  
+9. Install and open Jupyter Notebook. NOTE: once you complete this step and if you're on a Windows device, you can call the installed version of Jupyter Notebook within the conda environment directly from the start menu.  
 10. Navigate to the ExerciseDecoder.ipynb file within the repository
 
 ## Features
 
 - Implementation of Google MediaPipe's BlazePose model for real-time human pose estimation
 - Computer vision tools (i.e., OpenCV) for color conversion, detecting cameras, detecting camera properties, displaying images, and custom graphics/visualization 
-- Inferred 3D joint angle computation according to relative coordaintes of surrounding body landmarks
+- Inferred 3D joint angle computation according to relative coordinates of surrounding body landmarks
 - Guided training data generation
 - Data preprocessing and callback methods for efficient deep neural network training
-- Implemented and customizable LSTM and Attenion-Based LSTM models
+- Implemented and customizable LSTM and Attention-Based LSTM models
 - Real-time visualization of joint angles, rep counters, and probability distribution of exercise classification predictions
 
 ## To-Do
