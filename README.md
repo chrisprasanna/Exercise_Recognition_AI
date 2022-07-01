@@ -15,7 +15,7 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
   ```
   conda env create --name <NAME> --file environment.yml
   ```
-  &nbsp;&nbsp;&nbsp;where <NAME> needs to be changed to the name of the conda virtual environment for this project. This environment contains all the package installations and dependencies for this project.
+  > where <NAME> needs to be changed to the name of the conda virtual environment for this project. This environment contains all the package installations and dependencies for this project.
   
 6. Run the following command in the Anaconda prompt:
   ```
