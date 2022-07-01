@@ -45,6 +45,7 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 - Optimize hyperparameters based on minimizing training time and cross-entropy loss on the validation dataset
 - Add more exercise classes
 - Add additional models. For instance, even though BlazePose is a type of CNN, there may be benefits to including convolutional layers within the custom deep learning models
+- Build a generative adversarial network (GAN) to generate new video data with similar statistics as the collected video data (i.e., video synthesis)
 
 ## Credits
 
