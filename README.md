@@ -35,16 +35,16 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 - Inferred 3D joint angle computation according to relative coordinates of surrounding body landmarks
 - Guided training data generation
 - Data preprocessing and callback methods for efficient deep neural network training
-- Implemented and customizable LSTM and Attention-Based LSTM models
+- Customizable LSTM and Attention-Based LSTM models
 - Real-time visualization of joint angles, rep counters, and probability distribution of exercise classification predictions
 
 ## To-Do
 
-- Add AI features that can detect poor form (e.g., leaning, fast eccentric, knees caving in, poor squat depth, etc.) and offer real-time advice for correction. 
+- Add AI features that can detect poor form (e.g., leaning, fast eccentric motion, knees caving in, poor squat depth, etc.) and offer real-time advice/feedback for correction. 
 - Translate AI to a portable embedded system that you can take outdoors or at a commercial gym. Components may include a microcontroller (e.g., Raspberry Pi), external USB camera, LED screen, battery, and 3D-printed case. 
 - Optimize hyperparameters based on minimizing training time and cross-entropy loss on the validation dataset
 - Add more exercise classes
-- Add additional models. For instance, even though BlazePose is a type of CNN, there may be benefits to including convolutional layers to the exercise recognition AI
+- Add additional models. For instance, even though BlazePose is a type of CNN, there may be benefits to including convolutional layers within the custom deep learning models
 
 ## Credits
 
