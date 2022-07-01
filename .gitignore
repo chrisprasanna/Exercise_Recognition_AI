@@ -6,3 +6,5 @@ logs
 .ipynb_checkpoints
 *.h5
 env
+*.avi
+*.mp4
