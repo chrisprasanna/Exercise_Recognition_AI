@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
   ```
   conda activate <NAME>
   ```
-  &nbsp;&nbsp;&nbsp;This activates the conda environment containing all the required packages and their versions. 
+  > This activates the conda environment containing all the required packages and their versions. 
   
 7. Open Anaconda Navigator
 8. Under the "Applications On" dropdown menu, select the newly created conda environment
