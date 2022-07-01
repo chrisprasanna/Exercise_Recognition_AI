@@ -12,7 +12,10 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 3. Open the Anaconda Prompt
 4. Navigate to your working directory using the cd command
 5. Run the following command in the Anaconda prompt:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;  ````conda env create --name <NAME> --file environment.yml````<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;  
+````
+conda env create --name <NAME> --file environment.yml
+````<br/>
 &nbsp;&nbsp; where <NAME> needs to be changed to the name of the conda virtual environment for this project. This environment contains all the package installations and dependencies for this project.
 6. Run the following command in the Anaconda prompt:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;  ````conda activate <NAME>````<br/>
