@@ -6,13 +6,6 @@
 
 https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-bdc0-cf8a6077cc82.mp4
 
-## Table of Contents
-- [Installation](##installation)
-- [Features](##features)
-- [To-Do](##to-do)
-- [Credits](##credits)
-- [License](##license)
-
 ## Installation
 1. Download this repository and move it to your desired working directory
 2. Download Anaconda if you haven't already
