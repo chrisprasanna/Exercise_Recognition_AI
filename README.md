@@ -45,6 +45,7 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 - Add more exercise classes
 - Add additional models. For instance, even though BlazePose is a type of CNN, there may be benefits to including convolutional layers within the custom deep learning models
 - Build a generative adversarial network (GAN) to generate new video data with similar statistics as the collected video data (i.e., video synthesis)
+- Deploy models to a web app so anyone can use this AI with their webcam (possible tools: Docker, React, Tensorflow.Js, Javascript)
 
 ## Credits
 
