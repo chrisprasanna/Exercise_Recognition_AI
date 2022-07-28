@@ -39,7 +39,6 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 
 ## To-Do
 
-<<<<<<< HEAD
 - [ ] Add AI features that can detect poor form (e.g., leaning, fast eccentric motion, knees caving in, poor squat depth, etc.) and offer real-time advice/feedback for correction
 - [ ] Translate AI to a portable embedded system that you can take outdoors or at a commercial gym. Components may include a microcontroller (e.g., Raspberry Pi), external USB camera, LED screen, battery, and 3D-printed case
 - [ ] Optimize hyperparameters based on minimizing training time and cross-entropy loss on the validation dataset
@@ -47,15 +46,6 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 - [ ] Add additional models. For instance, even though BlazePose is a type of CNN, there may be benefits to including convolutional layers within the custom deep learning models
 - [ ] Add precision-recall analysis
 - [ ] Deploy AI to a web app using tools and techniques such as Flask, Docker, DevOps, and CI/CD
-=======
-- Add AI features that can detect poor form (e.g., leaning, fast eccentric motion, knees caving in, poor squat depth, etc.) and offer real-time advice/feedback for correction. 
-- Translate AI to a portable embedded system that you can take outdoors or at a commercial gym. Components may include a microcontroller (e.g., Raspberry Pi), external USB camera, LED screen, battery, and 3D-printed case. 
-- Optimize hyperparameters based on minimizing training time and cross-entropy loss on the validation dataset
-- Add more exercise classes
-- Add additional models. For instance, even though BlazePose is a type of CNN, there may be benefits to including convolutional layers within the custom deep learning models
-- Build a generative adversarial network (GAN) to generate new video data with similar statistics as the collected video data (i.e., video synthesis)
-- Deploy models to a web app so anyone can use this AI with their webcam (possible tools: Docker, React, Tensorflow.Js, Javascript)
->>>>>>> fdfb21c10f605c3b808a2f859659e8660f8fcc3f
 
 ## Credits
 
