@@ -44,8 +44,9 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 - [ ] Optimize hyperparameters based on minimizing training time and cross-entropy loss on the validation dataset
 - [ ] Add more exercise classes
 - [ ] Add additional models. For instance, even though BlazePose is a type of CNN, there may be benefits to including convolutional layers within the custom deep learning models
-- [ ] Add precision-recall analysis
+- [x] Add precision-recall analysis
 - [ ] Deploy AI to a web app using tools and techniques such as Flask, Docker, DevOps, and CI/CD
+- [ ] Train networks using joint kinematics rather than xyz coordinates
 
 ## Credits
 
