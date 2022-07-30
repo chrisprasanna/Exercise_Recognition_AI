@@ -41,7 +41,7 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 
 * Higher Priority
 	- [x] Add precision-recall analysis
-	- [ ] Train networks using joint kinematics rather than xyz coordinates
+	- [ ] Train networks using angular joint kinematics rather than xyz coordinates
 	- [ ] Deploy AI to a web app using tools and techniques such as Flask, Docker, DevOps, and CI/CD
 	- [ ] Translate AI to a portable embedded system that you can take outdoors or at a commercial gym. Components may include a microcontroller (e.g., Raspberry Pi), external USB camera, LED screen, battery, and 3D-printed case
 * Back-burner
