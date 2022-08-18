@@ -1,6 +1,6 @@
 pip
 opencv-python-headless
-python3-opencv
+libgl1-mesa-glx
 matplotlib==3.5.2
 mediapipe==0.8.10
 scikit-learn==1.0.2
