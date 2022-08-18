@@ -163,7 +163,6 @@ rope==0.22.0
 rsa==4.8
 Rtree==0.9.7
 scikit-learn==1.0.2
-scipy==1.5.3
 semver==2.13.0
 Send2Trash==1.8.0
 setuptools==61.2.0
