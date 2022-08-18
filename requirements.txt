@@ -149,7 +149,6 @@ pyls-spyder==0.3.2
 Pympler==1.0.1
 PyNaCl==1.4.0
 pyOpenSSL==22.0.0
-pyparsing==3.0.9
 pywin32==302
 pywin32-ctypes==0.2.0
 pywinpty==2.0.2
