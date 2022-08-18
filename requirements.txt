@@ -157,8 +157,6 @@ python-dateutil==2.8.2
 python-jsonrpc-server==0.4.0
 python-language-server==0.36.2
 python-slugify==5.0.2
-pytz==2022.1
-pytz-deprecation-shim==0.1.0.post0
 pywin32==302
 pywin32-ctypes==0.2.0
 pywinpty==2.0.2
