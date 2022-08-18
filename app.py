@@ -1,7 +1,5 @@
 import streamlit as st
 import cv2
-from streamlit_webrtc import VideoTransformerBase
-from streamlit_webrtc import webrtc_streamer
 
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (LSTM, Dense, Dropout, Softmax,
