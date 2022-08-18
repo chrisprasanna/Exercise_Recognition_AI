@@ -4,9 +4,9 @@ opencv-contrib-python==4.6.0.66
 matplotlib==3.5.2
 mediapipe==0.8.10
 scikit-learn==1.0.2
-tensorflow==2.5.0
+tensorflow
 scipy
-streamlit==1.12.0
-streamlit-webrtc==0.43.0
+streamlit
+streamlit-webrtc
 numpy
 absl-py==0.15.0
