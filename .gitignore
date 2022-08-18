@@ -5,6 +5,7 @@ old
 logs
 .ipynb_checkpoints
 *.h5
+!models/*.h5
 env
 *.avi
 *.mp4
