@@ -1,4 +1,4 @@
-opencv-python==4.0.1
+opencv
 opencv-contrib-python==4.6.0.66
 matplotlib==3.5.2
 mediapipe==0.8.10
