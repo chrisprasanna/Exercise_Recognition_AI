@@ -165,7 +165,6 @@ Rtree==0.9.7
 scikit-learn==1.0.2
 semver==2.13.0
 Send2Trash==1.8.0
-setuptools==61.2.0
 sip==4.19.13
 six==1.15.0
 smmap==5.0.0
