@@ -1,6 +1,6 @@
 pip
 opencv-python
-libgl1-mesa-glx
+opencpn
 opencv-python-headless
 matplotlib==3.5.2
 mediapipe==0.8.10
