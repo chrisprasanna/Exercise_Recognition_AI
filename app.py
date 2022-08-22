@@ -132,7 +132,8 @@ class VideoProcessor:
         # self.input_details = interpreter.get_input_details()
         # self.output_details = interpreter.get_output_details()
         # self.input_shape = self.input_details[0]['shape']
-        
+    
+    @st.cache()    
     def draw_landmarks(self, image, results):
         """
         This function draws keypoints and landmarks detected by the human pose estimation model
@@ -144,6 +145,7 @@ class VideoProcessor:
                                     )
         return
     
+    @st.cache()
     def extract_keypoints(self, results):
         """
         Processes and organizes the keypoints detected from the pose estimation model 
@@ -153,6 +155,7 @@ class VideoProcessor:
         pose = np.array([[res.x, res.y, res.z, res.visibility] for res in results.pose_landmarks.landmark]).flatten() if results.pose_landmarks else np.zeros(33*4)
         return pose
     
+    @st.cache()
     def calculate_angle(self, a,b,c):
         """
         Computes 3D joint angle inferred by 3 keypoints and their relative positions to one another
@@ -170,6 +173,7 @@ class VideoProcessor:
             
         return angle 
     
+    @st.cache()
     def get_coordinates(self, landmarks, mp_pose, side, joint):
         """
         Retrieves x and y coordinates of a particular keypoint from the pose estimation model
@@ -186,6 +190,7 @@ class VideoProcessor:
         y_coord_val = landmarks[coord.value].y
         return [x_coord_val, y_coord_val] 
     
+    @st.cache()
     def viz_joint_angle(self, image, angle, joint):
         """
         Displays the joint angle value near the joint within the image frame
@@ -197,6 +202,7 @@ class VideoProcessor:
                             )
         return
     
+    @st.cache()
     def count_reps(self, image, landmarks, mp_pose):
         """
         Counts repetitions of each exercise. Global count and stage (i.e., state) variables are updated within this function.
@@ -289,6 +295,7 @@ class VideoProcessor:
             pass
         return
     
+    @st.cache()
     def prob_viz(self, res, input_frame):
         """
         This function displays the model prediction probability distribution over the set of exercise classes
@@ -302,6 +309,7 @@ class VideoProcessor:
             
         return output_frame
     
+    @st.cache()
     def process(self, image):
         # Pose detection model
         image.flags.writeable = False
