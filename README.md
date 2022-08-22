@@ -5,6 +5,13 @@ In this project, I designed an AI that uses webcam footage to accurately detect 
 
 https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-bdc0-cf8a6077cc82.mp4
 
+## Web App
+A deployed web interface to perform Seattle Gas Price forecasts interactively is provided below.
+
+[Web App Link](https://chrisprasanna-exercise-recognition-ai-app-app-enjv7a.streamlitapp.com/)
+
+I used Streamlit, a python library designed for people who are not expert web developers, to build this data app to visualize model performances, key metrics, and future gas price forecasts from anywhere.
+
 ## Installation
 - Download this repository and move it to your desired working directory
 - Download Anaconda if you haven't already
@@ -42,7 +49,7 @@ https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-
 * Higher Priority
 	- [x] Add precision-recall analysis
 	- [ ] Train networks using angular joint kinematics rather than xyz coordinates
-	- [ ] Deploy AI to a web app using tools and techniques such as Flask, Docker, DevOps, and CI/CD
+	- [x] Deploy the AI and build a web app
 	- [ ] Translate AI to a portable embedded system that you can take outdoors or at a commercial gym. Components may include a microcontroller (e.g., Raspberry Pi), external USB camera, LED screen, battery, and 3D-printed case
 * Back-burner
 	- [ ] Add AI features that can detect poor form (e.g., leaning, fast eccentric motion, knees caving in, poor squat depth, etc.) and offer real-time advice/feedback for 
