@@ -1,0 +1,13 @@
+streamlit
+streamlit_webrtc
+keras==2.9.0
+notebook==6.4.11
+numpy==1.23.0
+Markdown==3.3.7
+ipykernel==6.9.1
+ipython==8.3.0
+mediapipe==0.8.10
+pillow==9.1.1
+opencv-python==4.6.0.66
+opencv-contrib-python==4.6.0.66
+tensorflow
