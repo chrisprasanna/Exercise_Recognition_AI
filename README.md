@@ -56,8 +56,10 @@ I also deployed the AI directly from Streamlit to their cloud. This was quick an
 
 * Higher Priority
 	- [x] Add precision-recall analysis
-	- [ ] Train networks using angular joint kinematics rather than xyz coordinates
 	- [x] Deploy the AI and build a web app
+	- [x] Build a Docker Image
+	- [x] Build a CI/CD workflow
+	- [ ] Train networks using angular joint kinematics rather than xyz coordinates
 	- [ ] Translate AI to a portable embedded system that you can take outdoors or at a commercial gym. Components may include a microcontroller (e.g., Raspberry Pi), external USB camera, LED screen, battery, and 3D-printed case
 * Back-burner
 	- [ ] Add AI features that can detect poor form (e.g., leaning, fast eccentric motion, knees caving in, poor squat depth, etc.) and offer real-time advice/feedback for 
