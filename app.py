@@ -1,27 +1,16 @@
-# %% 
 import streamlit as st
 import cv2
 
-import tensorflow as tf
-
-from tensorflow.keras.models import Model, Sequential
-from tensorflow.keras.layers import (LSTM, Dense, Dropout, Softmax,
-                                     Input, Flatten, Bidirectional, Permute, multiply)
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import (LSTM, Dense, Dropout, Input, Flatten, 
+                                     Bidirectional, Permute, multiply)
 
 import numpy as np
 import mediapipe as mp
 import math
 
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, WebRtcMode, RTCConfiguration
+from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 import av
-import time
-
-# from collections import deque
-# import queue
-# import threading
-# from pathlib import Path
-# from typing import List
-# import asyncio
 
 ## Build and Load Model
 def attention_block(inputs, time_steps):
@@ -43,6 +32,18 @@ def attention_block(inputs, time_steps):
 
 @st.cache(allow_output_mutation=True)
 def build_model(HIDDEN_UNITS=256, sequence_length=30, num_input_values=33*4, num_classes=3):
+    """
+    Function used to build the deep neural network model on startup
+
+    Args:
+        HIDDEN_UNITS (int, optional): Number of hidden units for each neural network hidden layer. Defaults to 256.
+        sequence_length (int, optional): Input sequence length (i.e., number of frames). Defaults to 30.
+        num_input_values (_type_, optional): Input size of the neural network model. Defaults to 33*4 (i.e., number of keypoints x number of metrics).
+        num_classes (int, optional): Number of classification categories (i.e., model output size). Defaults to 3.
+
+    Returns:
+        keras model: neural network with pre-trained weights
+    """
     # Input
     inputs = Input(shape=(sequence_length, num_input_values))
     # Bi-LSTM
@@ -55,43 +56,29 @@ def build_model(HIDDEN_UNITS=256, sequence_length=30, num_input_values=33*4, num
     x = Dropout(0.5)(x)
     # Output
     x = Dense(num_classes, activation='softmax')(x)
-
     # Bring it all together
     model = Model(inputs=[inputs], outputs=x)
 
-    ## Load Model
+    ## Load Model Weights
     load_dir = "./models/LSTM_Attention.h5"  
     model.load_weights(load_dir)
-    interpreter = []
     
-    # ## Convert to TF Lite
-    # converter = tf.lite.TFLiteConverter.from_keras_model(model) # path to the SavedModel directory
-    # converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS, tf.lite.OpsSet.SELECT_TF_OPS]
-    # model = converter.convert()
-    # open("converted_model.tflite", "wb").write(model)
-    
-    # ## Load the TFLite model and allocate tensors.
-    # interpreter = tf.lite.Interpreter(model_path="converted_model.tflite")
-    # interpreter.allocate_tensors()
-    
-    return model, interpreter
+    return model
 
 HIDDEN_UNITS = 256
-model, interpreter = build_model(HIDDEN_UNITS)
+model = build_model(HIDDEN_UNITS)
 
 ## App
-st.write("# AI Personal Trainer Web App")
+st.write("# AI Personal Fitness Trainer Web App")
 
 st.markdown("❗❗ **Development Note** ❗❗")
 st.markdown("Currently, the exercise recognition model uses the the x, y, and z coordinates of each anatomical landmark from the MediaPipe Pose model. These coordinates are normalized with respect to the image frame (e.g., the top left corner represents (x=0,y=0) and the bottom right corner represents(x=1,y=1)).")
 st.markdown("I'm currently developing and testing two new feature engineering strategies:")
 st.markdown("- Normalizing coordinates by the detected bounding box of the user")
-st.markdown("- Using joint angles rather than keypoint coordaintes as features")
-            
-
+st.markdown("- Using joint angles rather than keypoint coordaintes as features")            
 st.write("Stay Tuned!")
-st.write("## Settings")
 
+st.write("## Settings")
 threshold1 = st.slider("Minimum Keypoint Detection Confidence", 0.00, 1.00, 0.50)
 threshold2 = st.slider("Minimum Tracking Confidence", 0.00, 1.00, 0.50)
 threshold3 = st.slider("Minimum Activity Classification Confidence", 0.00, 1.00, 0.50)
@@ -101,14 +88,10 @@ st.write("## Activate the AI 🤖🏋️‍♂️")
 ## Mediapipe
 mp_pose = mp.solutions.pose # Pre-trained pose estimation model from Google Mediapipe
 mp_drawing = mp.solutions.drawing_utils # Supported Mediapipe visualization tools
-pose = mp_pose.Pose(min_detection_confidence=threshold1, min_tracking_confidence=threshold2)
+pose = mp_pose.Pose(min_detection_confidence=threshold1, min_tracking_confidence=threshold2) # mediapipe pose model
 
-## Stream From Webcam
-RTC_CONFIGURATION = RTCConfiguration(
-    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
-)
+## Real Time Machine Learning and Computer Vision Processes
 class VideoProcessor:
-
     def __init__(self):
         # Parameters
         self.actions = np.array(['curl', 'press', 'squat'])
@@ -127,11 +110,6 @@ class VideoProcessor:
         self.curl_stage = None
         self.press_stage = None
         self.squat_stage = None
-        
-        # # Get input and output tensors.
-        # self.input_details = interpreter.get_input_details()
-        # self.output_details = interpreter.get_output_details()
-        # self.input_shape = self.input_details[0]['shape']
     
     @st.cache()    
     def draw_landmarks(self, image, results):
@@ -230,8 +208,7 @@ class VideoProcessor:
             # Viz joint angle
             self.viz_joint_angle(image, angle, elbow)
             
-        elif self.current_action == 'press':
-            
+        elif self.current_action == 'press':           
             # Get coords
             shoulder = self.get_coordinates(landmarks, mp_pose, 'left', 'shoulder')
             elbow = self.get_coordinates(landmarks, mp_pose, 'left', 'elbow')
@@ -311,6 +288,15 @@ class VideoProcessor:
     
     @st.cache()
     def process(self, image):
+        """
+        Function to process the video frame from the user's webcam and run the fitness trainer AI
+
+        Args:
+            image (numpy array): input image from the webcam
+
+        Returns:
+            numpy array: processed image with keypoint detection and fitness activity classification visualized
+        """
         # Pose detection model
         image.flags.writeable = False
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -362,26 +348,26 @@ class VideoProcessor:
         # return cv2.flip(image, 1)
         return image
     
-    def recv(self, frame):        
+    def recv(self, frame):
+        """
+        Receive and process video stream from webcam
+
+        Args:
+            frame: current video frame
+
+        Returns:
+            av.VideoFrame: processed video frame
+        """
         img = frame.to_ndarray(format="bgr24")
         img = self.process(img)
         return av.VideoFrame.from_ndarray(img, format="bgr24")
-    
-    # async def recv_queued(self, frames: List[av.AudioFrame]) -> av.AudioFrame:
         
-    #     await asyncio.sleep(0.1)
-
-    #     # Return empty frames to be silent.
-    #     new_frames = []
-    #     for frame in frames:
-    #         img = frame.to_ndarray(format="bgr24")
-    #         img = process(img)
-    #         new_frame = av.VideoFrame.from_ndarray(img, format="bgr24")
-    #         new_frames.append(new_frame)
-
-    #     return new_frames
-        
-
+## Stream Webcam Video and Run Model
+# Options
+RTC_CONFIGURATION = RTCConfiguration(
+    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+)
+# Streamer
 webrtc_ctx = webrtc_streamer(
     key="AI trainer",
     mode=WebRtcMode.SENDRECV,
