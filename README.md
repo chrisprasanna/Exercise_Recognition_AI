@@ -6,11 +6,19 @@ In this project, I designed an AI that uses webcam footage to accurately detect 
 https://user-images.githubusercontent.com/88418264/176807706-960e19dd-4261-46f6-bdc0-cf8a6077cc82.mp4
 
 ## Web App
-A deployed web interface to perform Seattle Gas Price forecasts interactively is provided below.
+I made two web interfaces to use and interact with the Personal Fitness Trainer AI. The links and descriptions are provided below.  
 
-[Web App Link](https://chrisprasanna-exercise-recognition-ai-app-app-enjv7a.streamlitapp.com/)
+### Streamlit + Docker + Heroku + GitHub Actions (CI/CD)
 
-I used Streamlit, a python library designed for people who are not expert web developers, to build this data app to visualize model performances, key metrics, and future gas price forecasts from anywhere.
+[Web App Link (Heroku)](https://ai-personal-fitness-trainer.herokuapp.com/)
+
+I used Streamlit, a Python library designed for people who are not expert web developers, to design an application to use the AI. Streamlit allows you to build data science applications without worrying too much about the UI design, which is all handled by the Streamlit API. I then constructed a Dockerfile that provides instructions to build a Docker image with the running application. The application was then deployed on the web using Heroku and their Docker Container Registry. Finally, I automated the deployment pipeline using GitHub Actions. I did this by designing a workflow to build the Docker image and push to Heroku's registry whenever I pushed changes to the main branch of this GitHub repository. Essentially, the workflow file automatically performs the same commands that I ran on my local machine: login to the Heroku container registry, build the Docker image, and deploy it to the web.
+
+### Streamlit Cloud
+
+[Web App Link (Streamlit Cloud)](https://chrisprasanna-exercise-recognition-ai-app-app-enjv7a.streamlitapp.com/)
+
+I also deployed the AI directly from Streamlit to their cloud. This was quick and easy, however, the biggest downside of Streamlit cloud deployment is its speed issues. The entire Python script is re-run in the browser every time the user interacts with the application. I included the link to this application for documentation purposes but I would recommend you use the link from the previous section. 
 
 ## Installation
 - Download this repository and move it to your desired working directory
